@@ -10,6 +10,7 @@ export default ({ data }) => {
       {nodes.map((node, id) => (
         <Post
           key={id}
+          alt={node.slug}
           title={node.title}
           image={node.featured_media.source_url}
           excerpt={node.excerpt}
@@ -29,6 +30,7 @@ export const query = graphql`
         slug
         featured_media {
           source_url
+          slug
         }
       }
     }
